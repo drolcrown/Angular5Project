@@ -1,0 +1,40 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="enviarResposta()">
+    <div class="caixa container-fluid">
+        <div class="float-right">
+            <button [routerLink]="['/', 'fluxo', _route]" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <h4 class="text-center caixa-txt-2">{{nomeComponent}}</h4>
+    </div>
+    <!-- <div *ngIf="_modoEditar" class="container col-10 mt-3 mb-5 justify-content-center">
+        <label class="caixa-txt">Buscar {{nomeComponent}}s:</label>
+        <select #slt class="form-control" autofocus (click)="ativarEdicao(slt.value, editDiv)">
+            <option [value]="null"></option> 
+            <option  *ngFor="let fluxo of _fluxoPrincipal[0]; let i = index" [value]="i">
+                {{buscarFluxo(fluxo, false)}}
+            </option>
+        </select>
+        <div #editDiv [ngClass]="renderizar()">
+        </div>
+    </div> -->
+    <div *ngIf="!_modoEditar" [ngClass]="renderizar()">
+        <div class="form-group mt-3" *ngFor="let component of arrayObjects">
+            <label for="formGroupExampleInput" class="caixa-txt">{{component.name}}:</label>
+            <div [ngSwitch]="component.sufixo">
+                <input *ngSwitchDefault formControlName="{{component.name}}" type="text" class="form-control" placeholder="{{component.name}}" autocomplete="off" autofocus>
+                <input *ngSwitchCase="'dh'" max="2999-12-31" formControlName="{{component.name}}" type="date" class="form-control" placeholder="{{component.name}}" autocomplete="off" autofocus>
+                <select *ngSwitchCase="'nu'" formControlName="{{component.name}}" class="form-control" autofocus>
+                    <option [value]="null"></option> 
+                    <option *ngFor="let fluxo of component.fluxo" [value]="buscarFluxo(fluxo, true)">
+                        {{buscarFluxo(fluxo, false)}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <button type="submit" class="btn btn-primary mr-2 mb-5" [disabled]="formLimpo()">Enviar</button>
+            <button type="reset" class="btn btn-primary mb-5" [disabled]="formLimpo()">Limpar</button>
+        </div>
+    </div>
+</form>

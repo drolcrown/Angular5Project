@@ -1,0 +1,26 @@
+<div class="container-fluid">  
+    <div class="float-right">
+        <button routerLink="/home/fluxoInicial" type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <h1 class="text-center">Meus Fluxos</h1>
+    <div class="row justify-content-center mt-3 mb-4">
+        <a  routerLink="/home/user/conversa" class="shadow-lg p-3 rounded mt-3 ml-3 col-3" *ngFor="let dialogo of listDialogo" id="a">
+            <div class="card">
+            <h5 class="card-header" id="txtDialogo">Dialogo</h5>
+            <div class="card-body">
+            <p class="card-text" id="txtnuDialogo"><b>nuDialogo: </b>{{dialogo.nuDialogo}}</p>
+            <p class="card-text" id="txtnoDialogo"><b>noDialogo: </b>{{dialogo.noDialogo}}</p>
+            <p class="card-text" id="txtdeDialogo"><b>deDialogo: </b>{{dialogo.deDialogo}}</p>
+            <p class="card-text" id="txtcoMatriculaCadastro"><b>coMatriculaCadastro: </b>{{dialogo.coMatriculaCadastro}}</p>
+            <p class="card-text" id="txtcoMatriculaCadastro"><b>coMatriculaExclusao: </b>{{dialogo.coMatriculaExclusao}}</p>
+            <p class="card-text" id="txtdhCadastro"><b>dhCadastro: </b>{{dialogo.dhCadastro}}</p>
+            <p class="card-text" id="txtdhExclusao"><b>dhExclusao: </b>{{dialogo.dhExclusao}}</p>
+            </div>
+        </div>
+        </a>
+    </div>
+</div>
+
+

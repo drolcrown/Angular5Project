@@ -1,0 +1,10 @@
+#imgIBMWatson,#imgmicrosoftLuis{
+    text-align: center;
+}
+
+
+#txtIBMWatson,#txtmicrosoftLuis{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 10px;
+    text-align: center;
+}

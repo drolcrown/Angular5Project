@@ -1,0 +1,28 @@
+<div class="container-fly" *ngIf="_componentRoute == 'fluxoInicial'" >
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <img src="./../../../assets/icons/back.svg" class="icones-sm mr-2">
+            <small class="caixa-txt">Fluxo de Conversas</small>
+        </div>
+        <a routerLink="/fluxo/criar" class="form-group shadow-lg p-3 bg-white rounded col-8 mt-2">
+            <img src="./../../../assets/icons/add.svg" class="icones-md mr-2">
+            <small class="caixa-txt">CRIAR COMPONENTE</small>
+        </a>
+        <!-- <a  [routerLink]="['/dialogofluxo']" class="form-group shadow-lg p-3 bg-white rounded col-8 mt-2">
+            <img src="./../../../assets/icons/add.svg" class="icones-md mr-2">
+            <small class="caixa-txt">CRIAR NOVO FLUXO</small>
+        </a> -->
+        <a routerLink="/fluxo/editar" class="form-group shadow-lg p-3 bg-white rounded col-8 mt-2">
+            <img src="./../../../assets/icons/add.svg" class="icones-md mr-2">
+            <small class="caixa-txt">EDITAR COMPONENTE</small>
+        </a>
+        <a routerLink="/boasvindas" class="form-group shadow-lg p-3 bg-white rounded col-8 mt-2">
+            <img src="./../../../assets/icons/add.svg" class="icones-md mr-2">
+            <small class="caixa-txt">BOAS VINDAS</small>
+        </a>
+        <a routerLink="/login" class="form-group shadow-lg p-3 bg-white rounded col-8 mt-2">
+            <img src="./../../../assets/icons/add.svg" class="icones-md mr-2">
+            <small class="caixa-txt">EXCEÇÕES</small>
+        </a>
+    </div>
+</div>

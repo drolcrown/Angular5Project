@@ -1,0 +1,35 @@
+<div class="" >
+    <div class="caixa container-fluid">
+        <div class="float-right">
+            <button routerLink="/home/fluxoInicial" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <h4 class="text-center caixa-txt-2">{{_tipo}} FLUXO</h4>
+    </div>
+    <form *ngIf="_form" [formGroup]="_form" class="container">
+        <div *ngIf="!_edicao" class=" row mt-4 justify-content-center col-12">
+            <button routerLink="/vincularfluxo" type="button" class="col-8 shadow-lg p-3 rounded border caixa">
+                <p class="caixa-txt-2">VINCULAR FLUXO</p>
+            </button>
+        </div>
+        <!-- <div class=" row mt-4 justify-content-center col-12">
+            <button routerLink="/test" type="button" class="col-8 shadow-lg p-3 rounded border caixa">
+                <p class="caixa-txt-2">Test FLUXO</p>
+            </button>
+        </div> -->
+        <div class=" row mt-3 justify-content-center col-12 mb-3">
+            <div class="col-3 mt-5" *ngFor="let model of _lista">
+                <button type="button" (click)="ativarRota(model.constructor.name)" 
+                    class="col-12 shadow-lg p-3 rounded border caixa" [ngStyle]="estiloPerfil">
+                    <a>
+                        <div class="imgCriacao">
+                            <img src="./../../../assets/icons/add.svg" class="icones-md" alt="{{_tipo}} {{model.constructor.name}}"> 
+                        </div>
+                        <p class="caixa-txt-2">{{_tipo}} {{model.constructor.name.toUpperCase()}}</p>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

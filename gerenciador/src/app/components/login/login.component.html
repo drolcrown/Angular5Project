@@ -1,0 +1,25 @@
+<!-- border border-primary -->
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="enviarResposta()">
+    <div class="caixa container-fluid">
+        <!-- <div class="float-right">
+            <img class="col-12 img-circulo mx-auto d-block icones-lg" src="../../../assets/icons/user3.svg" />
+            <button type="submit" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div> -->
+        <img class="col-12 img-circulo mx-auto d-block icones-lg" src="../../../assets/img/foto-caixa-oficial.png" />
+    </div>
+    <div class="container-fly border border-primary rounded">
+        <div class="container col-8 mt-5">
+            <img class="col-12 img-circulo mx-auto d-block icones-lg" src="../../../assets/icons/user3.svg" />
+            <label for="formGroupExampleInput" class="caixa-txt">Usuario:</label>
+            <input formControlName="usuario" type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite seu login" required autocomplete="off" autofocus>
+            <label for="form1" class="caixa-txt mt-2">Senha:</label>
+            <input formControlName="senha" type="password" class="form-control" id="form1" placeholder="******" required autocomplete="off" autofocus minlength="8">
+        </div>
+        <div class="text-center mt-4 mb-2">
+            <button type="submit" class="btn btn-primary mr-2 mt-2" [disabled]="form.invalid">Entrar</button>
+            <button type="reset" class="btn btn-primary mt-2" [disabled]="!formLimpo()">Limpar</button>
+        </div>
+    </div>
+</form>

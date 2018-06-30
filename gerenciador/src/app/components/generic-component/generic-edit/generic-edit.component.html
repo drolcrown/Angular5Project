@@ -1,0 +1,19 @@
+<form *ngIf="_form" [formGroup]="_form" (ngSubmit)="enviarResposta()">
+  <!-- <div class="form-group mt-3" *ngFor="let component of arrayObjects">
+      <label for="formGroupExampleInput" class="caixa-txt">{{component.name}}:</label>
+      <div [ngSwitch]="component.sufixo">
+          <input *ngSwitchDefault formControlName="{{component.name}}" type="text" class="form-control" placeholder="{{component.name}}" autocomplete="off" autofocus>
+          <input *ngSwitchCase="'dh'" max="2999-12-31" formControlName="{{component.name}}" type="date" class="form-control" placeholder="{{component.name}}" autocomplete="off" autofocus>
+          <select *ngSwitchCase="'nu'" formControlName="{{component.name}}" class="form-control" autofocus>
+              <option [value]="null"></option> 
+              <option *ngFor="let fluxo of component.fluxo[0]; let i = index" [value]="buscarFluxo(fluxo, true)">
+                  {{buscarFluxo(fluxo, false)}}
+              </option>
+          </select>
+      </div>
+  </div> -->
+  <div class="text-center mt-5">
+      <button type="submit" class="btn btn-primary mr-2 mb-5" [disabled]="formLimpo()">Enviar</button>
+      <button type="reset" class="btn btn-primary mb-5" [disabled]="formLimpo()">Limpar</button>
+  </div>
+</form>

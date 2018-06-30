@@ -1,0 +1,50 @@
+<div class="container" >
+   <!-- border border-primary -->
+  <!-- <h5 class="text-center caixa-txt-1">Dialogo de Fluxo</h5> -->
+  <form class="mt-5" *ngIf="_form" [formGroup]="_form" (ngSubmit)="enviarResposta()" >
+    <div class="form-row">
+      <div class=" col-6">
+        <label for="fluxo" class="caixa-txt">Fluxo</label>
+        <select #comp class="form-control" id="fluxo" (click)="recuperaId(comp, 'conversa/buscaConversa', 2)">
+          <option [value]="0"></option>
+          <option *ngFor="let fluxo of _fluxos[0]" [value]="fluxo.nuDialogo">{{fluxo.deDialogo}}</option>
+        </select>
+      </div>
+      <div class=" col-6">
+        <label for="conversa" class="caixa-txt">Conversa</label>
+        <select #comp1 class="form-control" id="conversa" (click)="recuperaId(comp1, 'null', '')">
+          <option [value]="0"></option>
+          <option [value]="_fluxos[1].indexOf(conversa) " *ngFor="let conversa of _fluxos[1]">{{conversa.argumento.deArgumento}}</option>
+        </select>
+      </div>
+      <div class=" col-6">
+        <label for="conversa" class="caixa-txt">Argumento</label>
+        <select #comp2 class="form-control" (click)="recuperaId(comp2, 'null', '')">
+          <option [value]="0"></option>
+          <option [value]="argumento.nuTipoArgumento" *ngFor="let argumento of _arg">{{argumento.deArgumento}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="formGroupExampleInput4" class="caixa-txt">Codigo Matricula de Exclusao</label>
+      <input formControlName="coMatriculaExclusao" type="text" class="form-control" id="formGroupExampleInput4" placeholder="Codigo de Matricula para Exclusao">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput5" class="caixa-txt">Codigo Matricula de Cadastro</label>
+      <input formControlName="coMatriculaCadastro" type="text" class="form-control" id="formGroupExampleInput5" placeholder="Codigo de Matricula para Cadastro">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput6" class="caixa-txt">Data/Hora de Cadastro</label>
+      <input formControlName="dhCadastro" type="date" class="form-control" id="formGroupExampleInput6" placeholder="Data de Cadastro">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput7" class="caixa-txt">Data/Hora de Exclusao</label>
+      <input formControlName="dhExclusao" type="date" class="form-control" id="formGroupExampleInput7" placeholder="Data de Exclusao">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Enviar</button>
+      <button type="reset" class="btn btn-primary" [disabled]="formLimpo()">Limpar</button>
+    </div> -->
+  </form>
+</div>

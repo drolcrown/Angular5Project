@@ -1,0 +1,17 @@
+<div class="container-fly" *ngIf="_componentRoute == 'chatbot'" >
+    <form *ngIf="_form" [formGroup]="_form" (ngSubmit)="enviarResposta()">
+        <div class="border border-primary rounded">
+            <div class="container col-8 mt-5">
+                <h4 class="text-center caixa-txt-1 mb-5">De um nome para o seu Chatbot</h4>
+                <label for="formGroupExampleInput" class="caixa-txt">Nome do Chatbot:</label>
+                <input formControlName="nome" type="text" class="form-control" id="formGroupExampleInput" placeholder="Nome" required autocomplete="off" autofocus>
+                <label for="form1" class="caixa-txt mt-2">Proprietarios:</label>
+                <input formControlName="proprietario" type="text" class="form-control" id="form1" placeholder="Proprietario" required autocomplete="off" autofocus>
+            </div>
+            <div class="text-center mt-4 mb-2">
+                <button type="submit" class="btn btn-primary mr-2 mt-2" [disabled]="_form.invalid">Concluir</button>
+                <button type="reset" class="btn btn-primary mt-2" [disabled]="!formLimpo()">Limpar</button>
+            </div>
+        </div>
+    </form>
+</div>

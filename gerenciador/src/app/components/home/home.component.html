@@ -1,0 +1,32 @@
+<div class="">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light caixa">
+        <div class=" col-12 row">
+            <div class="col-2">
+                <img class="col-12 img-circulo icones-lg" routerLink="/home/fluxoInicial" (click)="alteraRota('fluxoInicial')" src="../../../assets/img/foto-caixa-oficial.png" />
+            </div>
+            <div class="col-9 row mt-4 mb-4">
+                <a class="nav-item active" (click)="alteraRota('chatbot')" routerLink="/home/chatbot">Meus Chatbots<span class="sr-only">(current)</span></a>
+                <a class="nav-item" (click)="alteraRota('aprovacoes')" routerLink="/home/aprovacoes">Aprovações</a>
+                <a class="nav-item" (click)="alteraRota('integrador')" routerLink="/home/integrador">Integrador de Bots</a>
+                <a class="nav-item" (click)="alteraRota('perfis')" routerLink="/home/gestaoperfil">Gestão de Perfis</a>
+                <a class="nav-item" (click)="alteraRota('redesocial')" routerLink="/home/canais">Canais</a>
+                <a class="nav-item" (click)="alteraRota('IA')" routerLink="/home/IA">Inteligência Artficial</a>
+                <a class="nav-item" (click)="alteraRota('analise')" routerLink="/home/analise">Análise</a>
+                <a class="nav-item" (click)="alteraRota('chatbot')" routerLink="/home/gestaoproduto">Gestão de Produto</a>
+            </div>
+            <div class="col-1 mt-3 text-center">
+                <img routerLink="/user" class="img-circulo mx-auto d-block icones-mdx" src="../../../assets/icons/user3.svg" />
+                <small routerLink="/user" >{{_user}}</small>
+                <a (click)="encerrarSessao()" routerLink="">Sair</a>
+            </div>
+        </div>
+    </nav>
+    <app-fluxo-de-conversa [rota]="_tipoDeRota"></app-fluxo-de-conversa>
+    <app-chatbot [rota]="_tipoDeRota"></app-chatbot>
+    <app-integrador [rota]="_tipoDeRota"></app-integrador>
+    <app-aprovacoes [rota]="_tipoDeRota"></app-aprovacoes>
+    <app-perfis [rota]="_tipoDeRota"></app-perfis>
+    <app-canais [rota]="_tipoDeRota"></app-canais>
+    <app-IA [rota]="_tipoDeRota"></app-IA>
+    <app-analise [rota]="_tipoDeRota"></app-analise>
+</div>
